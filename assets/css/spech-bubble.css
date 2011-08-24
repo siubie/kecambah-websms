@@ -1,0 +1,220 @@
+/* ============================================================================================================================
+== BUBBLE WITH AN OBTUSE TRIANGLE
+** ============================================================================================================================ */
+
+/* THE SPEECH BUBBLE
+------------------------------------------------------------------------------------------------------------------------------- */
+/*.left (Inbox)*/
+.triangle-obtuse.left {
+	position:relative;
+	padding:15px;
+	margin:1px 0px 0px 0px;
+	color:#fff;
+	background:#c81e2b;
+	/* css3 */
+	background:-webkit-gradient(linear, 0 0, 0 100%, from(#FFA858), to(#FF8000));
+	background:-moz-linear-gradient(#FFA858, #FF8000);
+	background:-o-linear-gradient(#FFA858, #FF8000);
+	background:linear-gradient(#FFA858, #FF8000);
+	-webkit-border-radius:10px;
+	-moz-border-radius:10px;
+	border-radius:10px;
+	width: -moz-fit-content;
+}
+
+/* display of quote author */
+.triangle-obtuse.left + p {margin: 5px 0 0 45px; font-style:italic;}
+
+/* THE TRIANGLE
+------------------------------------------------------------------------------------------------------------------------------- */
+
+/* creates the wider right-angled triangle */
+.triangle-obtuse.left:before {
+	content:"";
+	position:absolute;
+	bottom:-20px; /* value = - border-top-width - border-bottom-width */
+	left:10px; /* controls horizontal position */
+	border:0;
+	border-right-width:30px; /* vary this value to change the angle of the vertex */
+	border-bottom-width:20px; /* vary this value to change the height of the triangle. must be equal to the corresponding value in :after */
+	border-style:solid;
+	border-color:transparent #FF8000;
+    /* reduce the damage in FF3.0 */
+    display:block;
+    width:0;
+}
+
+/* creates the narrower right-angled triangle */
+.triangle-obtuse.left:after {
+	content:"";
+	position:absolute;
+	bottom:-20px; /* value = - border-top-width - border-bottom-width */
+	left:30px; /* value = (:before's left) + (:before's border-right/left-width)  - (:after's border-right/left-width) */
+	border:0;
+	border-right-width:10px; /* vary this value to change the angle of the vertex */
+	border-bottom-width:20px; /* vary this value to change the height of the triangle. must be equal to the corresponding value in :before */
+	border-style:solid;
+	border-color:transparent #AAE4FF;
+    /* reduce the damage in FF3.0 */
+    display:block;
+    width:0;
+}
+
+/*.right (Sent items)*/
+.triangle-obtuse.right {
+	position:relative;
+	padding:15px;
+	margin:0 0 0 0;
+	color:#fff;
+	text-align: right;
+	background:#c81e2b;
+	/* css3 */
+	background:-webkit-gradient(linear, 0 0, 0 100%, from(#00B700), to(#008000));
+	background:-moz-linear-gradient(#00B700, #008000);
+	background:-o-linear-gradient(#00B700, #008000);
+	background:linear-gradient(#00B700, #008000);
+	-webkit-border-radius:10px;
+	-moz-border-radius:10px;
+	border-radius:10px;
+	width: -moz-fit-content;
+	float: right;
+}
+
+/* display of quote author */
+.triangle-obtuse.right + p {margin: 55px 45px 5px 0px; text-align: right; font-style:italic;}
+
+/* THE TRIANGLE
+------------------------------------------------------------------------------------------------------------------------------- */
+
+/* creates the wider right-angled triangle */
+.triangle-obtuse.right:before {
+	content:"";
+	position:absolute;
+	bottom:-20px; /* value = - border-top-width - border-bottom-width */
+	right:10px; /* controls horizontal position */
+	border:0;
+	border-left-width:30px; /* vary this value to change the angle of the vertex */
+	border-bottom-width:20px; /* vary this value to change the height of the triangle. must be equal to the corresponding value in :after */
+	border-style:solid;
+	border-color:transparent #008000;
+    /* reduce the damage in FF3.0 */
+    display:block;
+    width:0;
+}
+
+/* creates the narrower right-angled triangle */
+.triangle-obtuse.right:after {
+	content:"";
+	position:absolute;
+	bottom:-20px; /* value = - border-top-width - border-bottom-width */
+	right:30px; /* value = (:before's left) + (:before's border-right/left-width)  - (:after's border-right/left-width) */
+	border:0;
+	border-left-width:10px; /* vary this value to change the angle of the vertex */
+	border-bottom-width:20px; /* vary this value to change the height of the triangle. must be equal to the corresponding value in :before */
+	border-style:solid;
+	border-color:transparent #AAE4FF;
+    /* reduce the damage in FF3.0 */
+    display:block;
+    width:0;
+}
+/* ============================================================================================================================
+== BLOCKQUOTE WITH OBTUSE TRIANGLE
+** ============================================================================================================================ */
+/*.right*/
+.example-obtuse.right {
+	position:relative;
+	padding:15px 30px;
+	margin:0;
+	color:#000;
+	background:#f3961c; /* default background for browsers without gradient support */
+	/* css3 */
+    background:-webkit-gradient(linear, 0 0, 0 100%, from(#f9d835), to(#f3961c));
+	background:-moz-linear-gradient(#f9d835, #f3961c);
+	background:-o-linear-gradient(#f9d835, #f3961c);
+	background:linear-gradient(#f9d835, #f3961c);
+	/* Using longhand to avoid inconsistencies between Safari 4 and Chrome 4 */
+	-webkit-border-top-left-radius:25px 50px;
+	-webkit-border-top-right-radius:25px 50px;
+	-webkit-border-bottom-right-radius:25px 50px;
+	-webkit-border-bottom-left-radius:25px 50px;
+	-moz-border-radius:25px / 50px;
+	border-radius:25px / 50px;
+}
+
+/* display of quote author (alternatively use a class on the element following the blockquote) */
+.example-obtuse.right + p {margin:10px 150px 2em 0; text-align:right; font-style:italic;}
+
+/* creates the larger triangle */
+.example-obtuse.right:before {
+	content:"";
+	position:absolute;
+	bottom:-30px;
+	right:80px;
+	border-width:0 0 30px 50px;
+	border-style:solid;
+	border-color:transparent #f3961c;
+    /* reduce the damage in FF3.0 */
+    display:block;
+    width:0;
+}
+
+/* creates the smaller triangle */
+.example-obtuse.right:after {
+	content:"";
+	position:absolute;
+	bottom:-30px;
+	right:110px;
+	border-width:0 0 30px 20px;
+	border-style:solid;
+	border-color:transparent #fff;
+    /* reduce the damage in FF3.0 */
+    display:block;
+    width:0;
+}
+
+/*.left*/
+.example-obtuse.left {
+    position:relative;
+	padding:1px 20px;
+	margin:0;
+	color:#000;
+	background:#f3961c; /* default background for browsers without gradient support */
+	/* css3 */
+    background:-webkit-gradient(linear, 0 0, 0 100%, from(#f9d835), to(#f3961c));
+	background:-moz-linear-gradient(#f9d835, #f3961c);
+	background:-o-linear-gradient(#f9d835, #f3961c);
+	background:linear-gradient(#f9d835, #f3961c);
+	/* Using longhand to avoid inconsistencies between Safari 4 and Chrome 4 */
+	-webkit-border-top-left-radius:25px 50px;
+	-webkit-border-top-right-radius:25px 50px;
+	-webkit-border-bottom-right-radius:25px 50px;
+	-webkit-border-bottom-left-radius:25px 50px;
+	-moz-border-radius:25px / 50px;
+	border-radius:25px / 50px;
+}
+.example-obtuse.left + p {
+    font-style: italic;
+    margin: 10px 0 2em 85px;
+}
+.example-obtuse.left:before {
+    border-color: transparent #F3961C;
+    border-style: solid;
+    border-width: 0 50px 30px 0px;
+    bottom: -30px;
+    content: "";
+    display: block;
+    position: absolute;
+    left: 30px;
+    width: 0;
+}
+.example-obtuse.left:after {
+    border-color: transparent #FFFFFF;
+    border-style: solid;
+    border-width: 0 20px 30px 0px;
+    bottom: -30px;
+    content: "";
+    display: block;
+    position: absolute;
+    left: 60px;
+    width: 0;
+}
