@@ -30,8 +30,8 @@ var plugins = {
 		ruleCount: 8
 	}
 };
-var jsonInbox = new dojox.data.JsonRestStore({target: "<?=site_url("inbox/jsonInbox")?>", syncMode:true, loadLazyValues:false});
-//var jsonInbox = < ?=site_url("inbox/jsonInbox")?>;
+//var jsonInbox = new dojox.data.JsonRestStore({target: "< ?=site_url("inbox/jsonInbox")?>", syncMode:true, loadLazyValues:false});
+var jsonInbox = <?=site_url("inbox/jsonInbox")?>;
 
 dojo.ready(function(){
 	dojo.connect(dijit.byId("grid"), "onFilterDefined", function(rules, rel){
