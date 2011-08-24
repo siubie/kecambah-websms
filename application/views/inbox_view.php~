@@ -1,4 +1,0 @@
-<h2>INBOX</h2>
-<div id="gridContainer">
-	<div id="grid" dojoType="dojox.grid.EnhancedGrid" store="test_store[0]" structure="layout" plugins="plugins"></div>
-</div>
