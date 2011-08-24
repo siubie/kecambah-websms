@@ -12,6 +12,7 @@
 		radius: 70,
 		startAngle: -90,
 		endAngle: 15,
+		useTooltip: false,
 		background: {color: "white"},
 		ranges: [ {low:0, high:2, hover:'0 - 2', color: "red"},
 			   {low:2, high:7, hover:'2 - 7', color: "yellow"},
@@ -31,8 +32,9 @@
 	}, gauge);
 	gauge.startup();
 	var bat = new dojox.widget.gauge.AnalogArrowIndicator({
-		value:0,
+		value:3,
 		width: 1,
+		dragRestriction: true,
 		easing: dojo.fx.easing.bounceOut
 		});
 	gauge.addIndicator(bat);
@@ -47,6 +49,7 @@
 		radius: 70,
 		startAngle: -90,
 		endAngle: 15,
+		useTooltip: false,
 		background: {color: "white"},
 		ranges: [ {low:0, high:2, hover:'0 - 2', color: "red"},
 			   {low:2, high:6, hover:'2 - 6', color: "yellow"},
@@ -66,16 +69,17 @@
 	}, gauge);
 	gauge.startup();
 	var sig = new dojox.widget.gauge.AnalogArrowIndicator({
-		value:0,
+		value:3,
 		width: 1,
+		dragRestriction: true,
 		easing: dojo.fx.easing.bounceOut
 		});
 	gauge.addIndicator(sig);
-	bat.update(<?=$phone['Battery']?>);
+	bat.update(<? echo ($phone['Battery'] / 10); ?>);
 	sig.update(<?=$phone['Signal']?>);
 	setInterval((function(b, s){
 		return (function(){
-			b.update(<?=$phone['Battery']?>);
+			b.update(<?echo ($phone['Battery'] / 10); ?>);
 			s.update(<?=$phone['Signal']?>);
 		});
 	})(bat, sig), 10000);
