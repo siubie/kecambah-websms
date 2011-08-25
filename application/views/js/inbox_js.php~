@@ -20,7 +20,7 @@ var plugins = {
 };
 var jsonInbox = new dojo.data.ItemFileReadStore({url: "<?=site_url('inbox/jsonInbox')?>"});
 dojo.ready(function(){
-	dojo.connect(dijit.byId("gridInbox"), "onFilterDefined", function(rules, rel){
+	dojo.connect(dojo.byId("gridInbox"), "onFilterDefined", function(rules, rel){
 		console.log("Filter changed: ", rules, rel);
 	});
 });
