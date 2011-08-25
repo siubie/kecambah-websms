@@ -25,7 +25,7 @@ var plugins = {
 };
 var data = {<?=$inbox?>};
 //var jsonInbox = new dojo.data.ItemFileWriteStore({url: "< ?=site_url('inbox/jsonInbox')?>"});
-var jsonInbox = new dojo.data.ItemFileReadStore({data:data});
+var jsonInbox = new dojo.data.ItemFileWriteStore({data:data});
 
 dojo.addOnLoad(function() {
 	dojo.connect(dojo._listener, "add", function(obj, event, context, method){

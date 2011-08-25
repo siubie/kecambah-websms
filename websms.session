@@ -5,9 +5,9 @@
       <item line="0" column="0" url="application/controllers/websms.php" />
       <item line="0" column="0" url="application/views/template.php" />
       <item line="0" column="0" url="application/models/m_message.php" />
-      <item line="0" column="0" url="application/views/js/inbox_js.php" />
-      <item line="0" column="0" url="application/controllers/inbox.php" />
-      <item line="0" column="0" url="application/views/inbox_view.php" />
+      <item line="27" column="42" url="application/views/js/inbox_js.php" />
+      <item line="10" column="43" url="application/controllers/inbox.php" />
+      <item line="1" column="24" url="application/views/inbox_view.php" />
     </itemcursorpositions>
   </session>
 </webprojectsession>
