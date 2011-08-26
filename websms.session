@@ -2,12 +2,11 @@
 <webprojectsession>
   <session usePreviewPrefix="0" previewPrefix="" >
     <itemcursorpositions>
-      <item line="0" column="0" url="application/controllers/websms.php" />
-      <item line="0" column="0" url="application/views/template.php" />
+      <item line="29" column="6" url="application/views/template.php" />
       <item line="0" column="0" url="application/models/m_message.php" />
-      <item line="27" column="42" url="application/views/js/inbox_js.php" />
-      <item line="10" column="43" url="application/controllers/inbox.php" />
-      <item line="1" column="24" url="application/views/inbox_view.php" />
+      <item line="16" column="52" url="application/controllers/inbox.php" />
+      <item line="0" column="18" url="application/views/inbox_view.php" />
+      <item line="4" column="116" url="application/views/js/inbox_js.php" />
     </itemcursorpositions>
   </session>
 </webprojectsession>

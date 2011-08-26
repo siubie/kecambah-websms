@@ -1,3 +1,18 @@
+<html><head><title></title>
+<link rel="stylesheet" type="text/css" href="<?=base_url("assets/dojo/dojo/resources/dojo.css")?>"/>
+<link rel="stylesheet" type="text/css" href="<?=base_url("assets/dojo/dijit/themes/claro/claro.css")?>"/>
+<link rel="stylesheet" type="text/css" href="<?=base_url("assets/dojo/dojox/grid/enhanced/resources/claro/EnhancedGrid.css")?>"/>
+<link rel="stylesheet" type="text/css" href="<?=base_url("assets/dojo/dojox/grid/enhanced/resources/EnhancedGrid_rtl.css")?>"/>
+<link rel="stylesheet" type="text/css" href="<?=base_url("assets/dojo/dijit/test/css/dijitTests.css")?>"/>
+
+<style type="text/css">
+#grid{
+	width: 100em;
+	height: 30em;
+}
+</style>
+
+<script src="<?=base_url("assets/dojo/dojo/dojo.js")?>" djConfig="parseOnLoad: true"></script>
 <script type="text/javascript">
 dojo.require("dojox.grid.EnhancedGrid");
 dojo.require("dojox.grid.enhanced.plugins.Filter");
@@ -43,4 +58,4 @@ dojo.addOnLoad(function() {
 	dojo.byId("gridContainer").appendChild(grid.domNode);
 	grid.startup();
 });
-</script>
+</script></head>

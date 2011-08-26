@@ -12,7 +12,9 @@ class Inbox extends CI_Controller {
 		$data['title'] = "Inbox";
 		$data['js'] = "js/inbox_js.php";
 		$data['content'] = "inbox_view.php";
-		$this->load->view('template',$data);
+		//$this->load->view('template',$data);
+		$this->load->view('js/inbox_js',$data);
+		$this->load->view('inbox_view',$data);
 	}
 
 	public function jsonInbox(){
