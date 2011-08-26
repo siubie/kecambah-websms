@@ -8,6 +8,7 @@ class Inbox extends CI_Controller {
 
 	public function index()
 	{
+		$data['inbox'] = "items: ".json_encode($this->m_message->get_inbox());
 		$data['title'] = "Inbox";
 		$data['inbox'] = true;
 		$data['js'] = "js/inbox_js.php";

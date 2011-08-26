@@ -9,7 +9,6 @@ class Websms extends CI_Controller {
 	public function index()
 	{
 		$data['title'] = "Status";
-		$data['status'] = true;
 		$data['js'] = "js/status_js.php";
 		$data['content'] = "status_view.php";
 		$data['phone'] = $this->m_status->get_phone();

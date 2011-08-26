@@ -1,8 +1,10 @@
+<html><head><title></title>
 <link rel="stylesheet" type="text/css" href="<?=base_url("assets/dojo/dojo/resources/dojo.css")?>"/>
 <link rel="stylesheet" type="text/css" href="<?=base_url("assets/dojo/dijit/themes/claro/claro.css")?>"/>
 <link rel="stylesheet" type="text/css" href="<?=base_url("assets/dojo/dojox/grid/enhanced/resources/claro/EnhancedGrid.css")?>"/>
 <link rel="stylesheet" type="text/css" href="<?=base_url("assets/dojo/dojox/grid/enhanced/resources/EnhancedGrid_rtl.css")?>"/>
 
+<script src="<?=base_url("assets/dojo/dojo/dojo.js")?>" djConfig="parseOnLoad: true"></script>
 <script type="text/javascript">
 dojo.require("dojox.grid.EnhancedGrid");
 dojo.require("dojox.grid.enhanced.plugins.Filter");
@@ -16,10 +18,9 @@ var gridArgs = {
 
 var layout = [
 		//5 kinds of datatype: string, number, date, time, boolean 'ReceivingDateTime, SenderNumber, TextDecoded, Flag'
-		{ field: "ReceivingDate", name:"Tanggal", width: '75px', datatype:"string"},
-		{ field: "ReceivingTime", name:"Jam", width: '75px', datatype:"string"},
-		{ field: "SenderNumber", name:"Pengirim", width: '110px', datatype:"string"},
-		{ field: "TextDecoded", name:"Isi Pesan", width: '210px', datatype:"string"},
+		{ field: "ReceivingDateTime", name:"Tanggal", width: '75px', datatype:"string"},
+		{ field: "SenderNumber", name:"Pengirim", width: '100px', datatype:"string"},
+		{ field: "TextDecoded", name:"Isi Pesan", width: '375px', datatype:"string"},
 		{ field: "Flag", name:"Flag", width: '25px', datatype:"string"}
 	];
 
@@ -29,8 +30,9 @@ var plugins = {
 		ruleCount: 1
 	}
 };
-var jsonInbox = new dojo.data.ItemFileWriteStore({url: "<?=site_url('inbox/jsonInbox')?>"});
-//var jsonInbox = new dojo.data.ItemFileReadStore({data:data});
+var data = {<?=$inbox?>};
+//var jsonInbox = new dojo.data.ItemFileWriteStore({url: "< ?=site_url('inbox/jsonInbox')?>"});
+var jsonInbox = new dojo.data.ItemFileReadStore({data:data});
 
 dojo.addOnLoad(function() {
 	dojo.connect(dojo._listener, "add", function(obj, event, context, method){
@@ -43,7 +45,7 @@ dojo.addOnLoad(function() {
 			store: jsonInbox,
 			structure: layout,
 			editable: false,
-			style: 'width: 104%; height: 500px;',
+			style: 'width: 650px; height: 300px;',
 			plugins : plugins
 		}, gridArgs));
 

@@ -7,7 +7,7 @@ class M_message extends CI_Model{
 	}
 
 	function get_inbox(){
-		$query_string = "Select ID, DATE_FORMAT(ReceivingDateTime, '%d-%m-%Y') AS ReceivingDate, DATE_FORMAT(ReceivingDateTime, '%T') AS ReceivingTime, SenderNumber, TextDecoded, Flag from inbox ORDER BY ReceivingDateTime DESC";
+		$query_string = "Select ID, DATE_FORMAT(ReceivingDateTime, '%d-%m-%Y') AS ReceivingDate, DATE_FORMAT(ReceivingDateTime, '%T') AS ReceivingTime, SenderNumber, SUBSTR(TextDecoded,1,35) AS TextDecoded, Flag from inbox ORDER BY ReceivingDateTime DESC";
 		//$this->db->select('ReceivingDateTime, SenderNumber, TextDecoded, Flag');
 		//$this->db->order_by("ReceivingDateTime", "desc");
 		$query = $this->db->get('inbox');

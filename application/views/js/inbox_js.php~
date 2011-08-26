@@ -29,6 +29,7 @@ var plugins = {
 		ruleCount: 1
 	}
 };
+var data = {<?=$inbox?>};
 var jsonInbox = new dojo.data.ItemFileWriteStore({url: "<?=site_url('inbox/jsonInbox')?>"});
 //var jsonInbox = new dojo.data.ItemFileReadStore({data:data});
 
