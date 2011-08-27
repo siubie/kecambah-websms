@@ -8,9 +8,6 @@ class M_message extends CI_Model{
 
 	function get_inbox(){
 		$query_string = "Select ID, DATE_FORMAT(ReceivingDateTime, '%d-%m-%Y') AS ReceivingDate, DATE_FORMAT(ReceivingDateTime, '%T') AS ReceivingTime, SenderNumber, TextDecoded, Flag from inbox ORDER BY ReceivingDateTime DESC";
-		//$this->db->select('ReceivingDateTime, SenderNumber, TextDecoded, Flag');
-		//$this->db->order_by("ReceivingDateTime", "desc");
-		$query = $this->db->get('inbox');
 		$query = $this->db->query($query_string);
 		if ($query->num_rows() > 0)
 			return $query->result_array();
@@ -19,9 +16,8 @@ class M_message extends CI_Model{
 	}
 
 	function get_outbox(){
-		$this->db->select('SendingDateTime, DestinationNumber, TextDecoded, CreatorID');
-		$this->db->order_by("SendingDateTime", "desc");
-		$query = $this->db->get('outbox');
+		$query_string = "Select ID, DATE_FORMAT(SendingDateTime, '%d-%m-%Y') AS SendingDate, DATE_FORMAT(SendingDateTime, '%T') AS SendingTime, DestinationNumber, TextDecoded, Flag from outbox ORDER BY SendingDateTime DESC";
+		$query = $this->db->query($query_string);
 		if ($query->num_rows() > 0)
 			return $query->result_array();
 		else
@@ -29,9 +25,8 @@ class M_message extends CI_Model{
 	}
 
 	function get_sentitems(){
-		$this->db->select('SendingDateTime, DestinationNumber, TextDecoded, CreatorID, Status');
-		$this->db->order_by("SendingDateTime", "desc");
-		$query = $this->db->get('sentitems');
+		$query_string = "Select ID, DATE_FORMAT(SendingDateTime, '%d-%m-%Y') AS SendingDate, DATE_FORMAT(SendingDateTime, '%T') AS SendingTime, DestinationNumber, TextDecoded, Status, Flag from sentitems ORDER BY SendingDateTime DESC";
+		$query = $this->db->query($query_string);
 		if ($query->num_rows() > 0)
 			return $query->result_array();
 		else

@@ -62,8 +62,8 @@
 		<ul class="menu">
 			<li><a href="<?=site_url()?>" <?if(isset($status))echo "class=\"active\""?>>STATUS</a></li>
 			<li><a href="<?=site_url("inbox")?>" <?if(isset($inbox))echo "class=\"active\""?>>Inbox</a></li>
-			<li><a href="#">Outbox</a></li>
-			<li><a href="#">Sent items</a></li>
+			<li><a href="<?=site_url("outbox")?>" <?if(isset($outbox))echo "class=\"active\""?>>Outbox</a></li>
+			<li><a href="<?=site_url("sentitems")?>" <?if(isset($sentitems))echo "class=\"active\""?>>Sent items</a></li>
 			<li class="last"><a href="#">Phone Books</a></li>
 		</ul>
 		</div>

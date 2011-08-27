@@ -4499,7 +4499,13 @@
     <item url="README" uploadstatus="1" />
     <item url="application/controllers/inbox.php" uploadstatus="1" />
     <item url="application/views/inbox_view.php" uploadstatus="1" />
-    <item url="application/views/grid_view.php" />
-    <item url="application/views/js/grid_js.php" />
+    <item url="application/views/grid_view.php" uploadstatus="1" />
+    <item url="application/views/js/grid_js.php" uploadstatus="1" />
+    <item url="application/controllers/outbox.php" />
+    <item url="application/views/outbox_view.php" />
+    <item url="application/views/js/outbox_js.php" />
+    <item url="application/controllers/sentitems.php" />
+    <item url="application/views/sentitems_view.php" />
+    <item url="application/views/js/sentitems_js.php" />
   </project>
 </webproject>

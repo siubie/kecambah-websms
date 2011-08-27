@@ -16,11 +16,12 @@ var gridArgs = {
 
 var layout = [
 		//5 kinds of datatype: string, number, date, time, boolean 'ReceivingDateTime, SenderNumber, TextDecoded, Flag'
-		{ field: "ReceivingDate", name:"Tanggal", width: '75px', datatype:"string"},
-		{ field: "ReceivingTime", name:"Jam", width: '75px', datatype:"string"},
-		{ field: "SenderNumber", name:"Pengirim", width: '110px', datatype:"string"},
-		{ field: "TextDecoded", name:"Isi Pesan", width: '210px', datatype:"string"},
-		{ field: "Flag", name:"Flag", width: '25px', datatype:"string"}
+		{ field: "SendingDate", name:"Tanggal", width: '60px', datatype:"string"},
+		{ field: "SendingTime", name:"Jam", width: '60px', datatype:"string"},
+		{ field: "DestinationNumber", name:"Kepada", width: '100px', datatype:"string"},
+		{ field: "TextDecoded", name:"Isi Pesan", width: '185px', datatype:"string"},
+		{ field: "Status", name:"Status", width: '60px', datatype:"string"},
+		{ field: "Flag", name:"Flag", datatype:"string", width: '20px'}
 	];
 
 var plugins = {
@@ -29,7 +30,7 @@ var plugins = {
 		ruleCount: 1
 	}
 };
-var jsonInbox = new dojo.data.ItemFileWriteStore({url: "<?=site_url('inbox/jsonInbox')?>"});
+var jsonSentitems = new dojo.data.ItemFileWriteStore({url: "<?=site_url('sentitems/jsonSentitems')?>"});
 //var jsonInbox = new dojo.data.ItemFileReadStore({data:data});
 
 dojo.addOnLoad(function() {
@@ -40,7 +41,7 @@ dojo.addOnLoad(function() {
 	grid = new dojox.grid.EnhancedGrid(
 		dojo.mixin({
 			id: "grid",
-			store: jsonInbox,
+			store: jsonSentitems,
 			structure: layout,
 			editable: false,
 			style: 'width: 104%; height: 500px;',
